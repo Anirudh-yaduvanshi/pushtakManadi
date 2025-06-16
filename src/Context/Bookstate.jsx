@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Bookcontext from "./Bookcontext";
 
 const Bookstate = (props) => {
-  const host = "http://localhost:8080/api"; //backend ka host ya server api
+  const host = "https://pustakpeeth.onrender.com/api"; //backend ka host ya server api
   const [Book, setBook] = useState([]);
   const [user, setUser] = useState(null);
 
