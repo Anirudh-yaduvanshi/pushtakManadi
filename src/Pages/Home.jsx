@@ -203,47 +203,11 @@ const Home = () => {
               Purchase Membership
             </Link>
             
-            <button onclick="window.location.href='upi://pay?pa=7017138924@yapl&pn=Pusthak%20Mandi&am=999&cu=INR&tn=Payment%20to%20Pusthak%20Mandi'">
-              Pay ₹999 via UPI
-            </button>
+          
           </div>
         </section>
       )}
 
-      {/* 
-       {!log && (
-                  <li>
-                    <NavLink
-                      to="/auth"
-                      className={({ isActive }) =>
-                        `${
-                          isActive
-                            ? "bg-red-600 hover:bg-red-500"
-                            : "bg-gray-600 hover:bg-gray-700"
-                        } px-4 py-2 rounded-lg block`
-                      }
-                    >
-                      Login/Register
-                    </NavLink>
-                  </li>
-                )}
-      
-                {log && (
-                  <li>
-                    <NavLink
-                      to="/profile"
-                      className={({ isActive }) =>
-                        `${
-                          isActive
-                            ? "bg-red-600 hover:bg-red-500"
-                            : "bg-gray-600 hover:bg-gray-700"
-                        } px-4 py-2 rounded-lg block`
-                      }
-                    >
-                      Profile
-                    </NavLink>
-                  </li>
-                )} */}
     </div>
   );
 };
