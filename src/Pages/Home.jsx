@@ -196,18 +196,15 @@ const Home = () => {
               YOU CAN ACCESS THOUSANDS OF RESOURCES BY
             </p>
             <Link
-              to="upi://pay?pa=yadavanirudh97.25-1@okaxis&pn=Pusthak%20Mandi&am=1&cu=INR&tn=Payment%20to%20Pusthak%20Mandi"
+              to="upi://pay?pa=vashukashyap8006911953@oksbi&pn=Pusthak%20Mandi&am=1&cu=INR&tn=Payment%20to%20Pusthak%20Mandi"
               target="_blank"
               className="bg-violet-600 text-white px-6 py-3 rounded hover:bg-gray-600 transition shadow-md"
             >
               Purchase Membership
             </Link>
-            
-          
           </div>
         </section>
       )}
-
     </div>
   );
 };
