@@ -1,7 +1,16 @@
-import React from "react";
+import React,{useState , useEffect} from "react";
 import { Link } from "react-router";
 
 const Home = () => {
+    const [log, setLog] = useState(false);
+   useEffect(() => {
+      if (localStorage.getItem("auth-token")) {
+        setLog(true);
+      } else {
+        setLog(false);
+        localStorage.removeItem("auth-token");
+      }
+    }, [log]);
   return (
     <div className="bg-gray-900 text-gray-200">
       {/* Hero Section with Background Image */}
@@ -97,7 +106,6 @@ const Home = () => {
       </section>
 
       {/* Upcoming Events */}
-     
 
       {/* Testimonials */}
       <section className="py-16 px-6 bg-gray-900">
@@ -159,23 +167,78 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 mb-10 px-6 bg-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-white">
-            Become a Member Today
-          </h2>
-          <p className="mb-6 text-gray-300">
-            Join our library and gain access to thousands of resources — free of
-            charge!
-          </p>
-          <Link
-            to="/auth"
-            className="bg-violet-600 text-white px-6 py-3 rounded hover:bg-gray-600 transition shadow-md"
-          >
-            Sign Up Now
-          </Link>
-        </div>
-      </section>
+      {!log && (
+        <section className="py-16 mb-10 px-6 bg-gray-800">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4 text-white">
+              Become a Member Today
+            </h2>
+            <p className="mb-6 text-gray-300">
+              Join our library and gain access to thousands of resources — free
+              of charge!
+            </p>
+            <Link
+              to="/auth"
+              className="bg-violet-600 text-white px-6 py-3 rounded hover:bg-gray-600 transition shadow-md"
+            >
+              Sign Up Now
+            </Link>
+          </div>
+        </section>
+      )}
+      {log && (
+        <section className="py-16 mb-10 px-6 bg-gray-800">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4 text-white">
+              JOIN OUR LIBRARY TODAY
+            </h2>
+            <p className="mb-6 text-gray-300">
+              YOU CAN ACCESS THOUSANDS OF RESOURCES BY
+            </p>
+            <Link
+              to="https://onlinesbi.sbi.bank.in/"
+              className="bg-violet-600 text-white px-6 py-3 rounded hover:bg-gray-600 transition shadow-md"
+            >
+              Purchase Membership
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* 
+       {!log && (
+                  <li>
+                    <NavLink
+                      to="/auth"
+                      className={({ isActive }) =>
+                        `${
+                          isActive
+                            ? "bg-red-600 hover:bg-red-500"
+                            : "bg-gray-600 hover:bg-gray-700"
+                        } px-4 py-2 rounded-lg block`
+                      }
+                    >
+                      Login/Register
+                    </NavLink>
+                  </li>
+                )}
+      
+                {log && (
+                  <li>
+                    <NavLink
+                      to="/profile"
+                      className={({ isActive }) =>
+                        `${
+                          isActive
+                            ? "bg-red-600 hover:bg-red-500"
+                            : "bg-gray-600 hover:bg-gray-700"
+                        } px-4 py-2 rounded-lg block`
+                      }
+                    >
+                      Profile
+                    </NavLink>
+                  </li>
+                )} */}
     </div>
   );
 };
