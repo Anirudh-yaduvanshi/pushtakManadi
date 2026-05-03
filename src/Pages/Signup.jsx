@@ -21,7 +21,7 @@ const Signup = () => {
     e.preventDefault();
     let success = await register(rdata.username, rdata.email, rdata.password);
     if (success) {
-      navigate("/home");
+      navigate("/");
       window.location.reload();
     }
     else {
@@ -34,7 +34,7 @@ const Signup = () => {
     e.preventDefault();
     let success = await login(ldata.email, ldata.password)
     if (success) {
-      navigate("/home");
+      navigate("/");
       window.location.reload(); 
     }
     else {
